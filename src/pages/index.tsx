@@ -15,6 +15,14 @@ import travel from "../text/travel.md";
 
 import schedule from "../text/programme.json";
 
+
+
+
+
+
+
+
+
 type row = typeof schedule[0];
 
 const parsetime = (t: string) => {
@@ -91,7 +99,6 @@ const Row = ({ data }: { data: row }) => {
 }
 
 
-/* {references.map((ref, index) => <ReferenceDisplay key={index} reference={ref} />)} */
 
 const Calendar = () => {
   return (
@@ -146,8 +153,8 @@ export default function Home() {
         <title>Sustainable computing workshop</title>
         <meta name="description" content="Sustainable computing for the life and health sciences" />
       </Head>
-      <div className="flex min-h-screen flex-col justify-top">
-        <header className="bg-cover" style={{ backgroundImage: `url("hero.jpg")`, backgroundPosition: `bottom` }}>
+      <div className="flex min-h-screen flex-col justify-top mx-auto bg-gray-200 drop-shadow-lg backdrop-blur-lg">
+        <header className="bg-cover max-w-7xl mx-auto w-full" style={{ backgroundImage: `url("hero.jpg")`, backgroundPosition: `bottom` }}>
           <h1 className="text-white text-5xl px-10 pt-16 pb-16 font-bold">
             Green Research Computing for Health & Life Sciences
           </h1>
@@ -160,9 +167,9 @@ export default function Home() {
               Join us for a free workshop on Green Research Computing for Health & Life Sciences at the prestigious Wellcome Trust in London!
             </p>
           </div>
-        </header>
         <Navbar />
-        <main className="container mx-auto">
+        </header>
+        <main className="container mx-auto bg-white max-w-7xl">
           <div className="px-10 py-10">
             <article className="article">
               <SubPage text={introduction.toString()} id="about" />
@@ -175,8 +182,8 @@ export default function Home() {
             </article>
           </div>
         </main>
-        <span className="w-full border-b-2 border-gray-100"></span>
-        <footer className="md:w-[70%] mx-auto">
+        <span className="w-full"></span>
+        <footer className="md:max-w-7xl mx-auto w-full bg-white border-t-2 border-gray-100">
           <div className="prose prose-base px-5 pt-4 text-gray-500">With support from</div>
           <div className="md:grid md:grid-cols-3 px-10 pb-10 flex flex-col md:gap-1 gap-5 mx-auto items-center">
            <div className="mx-auto"><img className="logo" src="MRC.svg"/></div>
