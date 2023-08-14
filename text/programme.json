@@ -1,0 +1,138 @@
+[
+  {
+    "start": "2023-11-07 10:00:00",
+    "finish": "2023-11-07 10:00:00",
+    "type_of": "section",
+    "title": "Session 1 - The Big Picture",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 10:00:00",
+    "finish": "2023-11-07 10:20:00",
+    "type_of": "talk",
+    "title": "Opening remarks - Why are we here?",
+    "person": "Charlotte Rae",
+    "affiliation": "University of Sussex"
+  },
+  {
+    "start": "2023-11-07 10:20:00",
+    "finish": "2023-11-07 10:40:00",
+    "type_of": "talk",
+    "title": "The role of funders and institutions",
+    "person": "Gabrielle Samuel",
+    "affiliation": "King's College London"
+  },
+  {
+    "start": "2023-11-07 10:40:00",
+    "finish": "2023-11-07 11:00:00",
+    "type_of": "talk",
+    "title": "TITLE",
+    "person": "Talia Caplan",
+    "affiliation": "Welcomme"
+  },
+  {
+    "start": "2023-11-07 11:00:00",
+    "finish": "2023-11-07 11:20:00",
+    "type_of": "talk",
+    "title": "TITE",
+    "person": "Martin Farely",
+    "affiliation": "GreenLab Associates; University College London"
+  },
+  {
+    "start": "2023-11-07 11:20:00",
+    "finish": "2023-11-07 11:40:00",
+    "type_of": "break",
+    "title": "Break",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 11:40:00",
+    "finish": "2023-11-07 11:40:00",
+    "type_of": "section",
+    "title": "Session 2 - The Technical Side",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 11:40:00",
+    "finish": "2023-11-07 12:00:00",
+    "type_of": "talk",
+    "title": "The carbon footprint of high-performance computing",
+    "person": "Loïc Lannelongue",
+    "affiliation": "University of Cambridge"
+  },
+  {
+    "start": "2023-11-07 12:00:00",
+    "finish": "2023-11-07 12:20:00",
+    "type_of": "talk",
+    "title": "TITLE",
+    "person": "Miranda XX",
+    "affiliation": "XXX"
+  },
+  {
+    "start": "2023-11-07 12:20:00",
+    "finish": "2023-11-07 12:40:00",
+    "type_of": "talk",
+    "title": "Reducing the carbon footprint of digital pipelines: A case study",
+    "person": "Nick Souter",
+    "affiliation": "University of Sussex"
+  },
+  {
+    "start": "2023-11-07 12:40:00",
+    "finish": "2023-11-07 13:00:00",
+    "type_of": "talk",
+    "title": "The benefits of efficient programmingg",
+    "person": "Lincoln Colling",
+    "affiliation": "University of Sussex; Software Sustainability Institute"
+  },
+  {
+    "start": "2023-11-07 13:00:00",
+    "finish": "2023-11-07 14:00:00",
+    "type_of": "break",
+    "title": "Meat-free lunch",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 14:00:00",
+    "finish": "2023-11-07 14:00:00",
+    "type_of": "section",
+    "title": "Session 3 - Breakout Discussion",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 14:00:00",
+    "finish": "2023-11-07 15:00:00",
+    "type_of": "discussion",
+    "title": "Separate moderated group discussions concerning steps you can take in your own work to reduce the carbon footprint of your computing, as well as barriers and potential solutions",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 15:00:00",
+    "finish": "2023-11-07 15:30:00",
+    "type_of": "break",
+    "title": "Break",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 15:30:00",
+    "finish": "2023-11-07 15:30:00",
+    "type_of": "section",
+    "title": "Session 4 - Feedback",
+    "person": "",
+    "affiliation": ""
+  },
+  {
+    "start": "2023-11-07 15:30:00",
+    "finish": "2023-11-07 16:00:00",
+    "type_of": "discussion",
+    "title": "Feedback from group discussions summarised by table moderators, followed by closing remarks.",
+    "person": "",
+    "affiliation": ""
+  }
+]

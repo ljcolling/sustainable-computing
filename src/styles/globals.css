@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+tr, td {
+  @apply border-solid border-2 border-black
+}
+
+
+
+.article {
+  @apply prose;
+  @apply prose-neutral;
+  @apply prose-base;
+  @apply mx-auto
+}
+
+
+.article h2 {
+  @apply uppercase;
+  @apply text-base;
+  @apply font-medium
+}
+
+.article h3 {
+  @apply uppercase;
+  @apply text-sm;
+}
+
+.navbar {
+  @apply md:flex flex-row;
+  @apply md:justify-end;
+  @apply md:flex-row;
+  @apply gap-10;
+  @apply md:py-5;
+  @apply pt-5;
+  @apply md:px-10;
+  @apply md:bg-black;
+}
+
+.navigation-menu {
+  @apply hidden md:block
+}
+
+.navigation-menu.expanded {
+  @apply block ;
+  z-index: 1;
+}
+.menu-item {
+  @apply text-base;
+  @apply hover:text-blue-500;
+  @apply duration-500;
+  @apply text-white;
+  @apply md:gap-10;
+  @apply md:py-1 pb-5;
+}
+
+/* Nav bar stuff */
+
+/*
+ .hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #2642af;
+}
+
+
+.navigation {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 0rem;
+  color: black;
+  z-index: 1;
+}
+
+.navigation-menu {
+  margin-left: auto;
+}
+
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+.navigation-menu li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+.navigation-menu li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-menu ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-menu ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh);
+    background-color: white;
+    border-top: 1px solid black;
+  }
+  .navigation-menu li {
+    text-align: center;
+    margin: 0;
+  }
+  .navigation-menu li a {
+    color: black;
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: white;
+    z-index: 1 ;
+  }
+  .navigation-menu li:hover {
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-menu ul {
+    dipslay: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-menu.expanded ul {
+    display: block;
+  }
+}
+*/
