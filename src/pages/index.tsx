@@ -1,5 +1,6 @@
 import Document from "next/document";
 import Head from "next/head";
+import { ReactNode, useState } from "react";
 import Link from "next/link";
 
 
@@ -12,7 +13,6 @@ import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
 
-import { ReactNode, useState } from "react";
 import schedule from "../text/programme.json";
 
 type row = typeof schedule[0];
