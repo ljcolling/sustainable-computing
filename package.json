@@ -22,6 +22,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.6",
     "rehype-raw": "^6.1.1",
+    "typescript-eslint": "^0.0.1-alpha.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
