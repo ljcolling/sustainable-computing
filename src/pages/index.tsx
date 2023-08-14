@@ -165,13 +165,13 @@ export default function Home() {
         <main className="container mx-auto">
           <div className="px-10 py-10">
             <article className="article">
-              <SubPage text={introduction} id="about" />
-              <SubPage text={programme} id="programme">
+              <SubPage text={introduction.toString()} id="about" />
+              <SubPage text={programme.toString()} id="programme">
               <Calendar></Calendar> 
               </SubPage>
-              <SubPage text={registration} id="registration" />
-              <SubPage text={travel} id="travel" />
-              <SubPage text={code_of_conduct} id="code_of_conduct" />
+              <SubPage text={registration.toString()} id="registration" />
+              <SubPage text={travel.toString()} id="travel" />
+              <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
             </article>
           </div>
         </main>
