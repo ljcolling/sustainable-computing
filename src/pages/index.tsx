@@ -1,19 +1,19 @@
+import Document from "next/document";
 import Head from "next/head";
-import Document from "next/document"
 import Link from "next/link";
 
 
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from 'rehype-raw'
+import rehypeRaw from 'rehype-raw';
 
-import introduction from "../../text/introduction.md"
-import programme from "../../text/programme.md"
-import registration from "../../text/registration.md"
-import travel from "../../text/travel.md"
-import code_of_conduct from "../../text/code_of_conduct.md"
+import code_of_conduct from "../text/code_of_conduct.md";
+import introduction from "../text/introduction.md";
+import programme from "../text/programme.md";
+import registration from "../text/registration.md";
+import travel from "../text/travel.md";
 
-import schedule from "../../text/programme.json"
 import { ReactNode, useState } from "react";
+import schedule from "../text/programme.json";
 
 type row = typeof schedule[0];
 
