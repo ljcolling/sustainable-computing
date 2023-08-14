@@ -177,11 +177,11 @@ export default function Home() {
         </main>
         <span className="w-full border-b-2 border-gray-100"></span>
         <footer className="md:w-[70%] mx-auto">
-          <div className="prose prose-base px-5 pt-4 pb-4 text-gray-500">With support from</div>
-          <div className="md:grid md:grid-cols-3 px-10 pb-10 flex flex-col gap-10 mx-auto items-center">
-           <div className="mx-auto md:mr-auto md:ml-5"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Medical_Research_Council_logo.svg" height="200" width="200" /></div>
-           <div className="mx-auto"><img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Wellcome_Trust_logo.svg" height="200" width="100" /></div>
-           <div className="mx-auto md:ml-auto md:mr-5"><img src="https://softwaresaved.github.io/software-deposit-guidance/images/ssi.png" height="200" width="300" /></div>
+          <div className="prose prose-base px-5 pt-4 text-gray-500">With support from</div>
+          <div className="md:grid md:grid-cols-3 px-10 pb-10 flex flex-col md:gap-1 gap-5 mx-auto items-center">
+           <div className="mx-auto"><img className="logo" src="MRC.svg"/></div>
+           <div className="mx-auto"><img className="logo" src="WEL.svg"/></div>
+           <div className="mx-auto"><img className="logo" src="SSI.svg"/></div>
           </div>
         </footer>
       </div>

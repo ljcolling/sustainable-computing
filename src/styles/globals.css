@@ -56,6 +56,13 @@ tr, td {
   @apply md:py-1 pb-5;
 }
 
+img.logo {
+    width: 220px;  
+    height: 100px; 
+    max-width: 100%;
+    border: 0; 
+}
+
 /* Nav bar stuff */
 
 /*
