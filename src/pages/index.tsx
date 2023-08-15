@@ -53,7 +53,7 @@ const SubPage = ({ text, id, children }: { text: string, id: string, children?: 
         {text}
       </Markdown>
       {children}
-      <p className="pb-5"><a href="#nav"><span className="text-xs text-gray-500 flex"><BsChevronUp />Return to top</span></a></p>
+      <p className="pb-5"><button onClick={() => document.body.scrollIntoView()}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button></p>
     </div>
   )
 }
