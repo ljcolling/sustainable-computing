@@ -168,7 +168,7 @@ function Navbar() {
         }
       >
         <ul className="navbar">
-          <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#about">About</a></li>
+          <li className="menu-item"><a onClick={() => {setIsNavExpanded(!isNavExpanded)}} href="#about" >About</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#programme">Programme</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#registration">Registration</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#travel">Travel</a></li>

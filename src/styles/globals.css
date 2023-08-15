@@ -44,18 +44,16 @@ tr, td {
 }
 
 .navigation-menu {
-  @apply hidden md:block
+  @apply hidden md:block;
+  @apply bg-black;
+  @apply md:relative absolute;
+  @apply md:p-0 p-5;
+  @apply w-full;
+  @apply md:mt-0 mt-10
 }
 
 .navigation-menu.expanded {
   @apply block ;
-  position: absolute;
-  @apply bg-black;
-  @apply p-8;
-  @apply mx-auto;
-  @apply mt-10;
-  @apply w-full;
-  @apply pt-2;
 }
 
 .menu-item {
@@ -64,7 +62,7 @@ tr, td {
   @apply duration-500;
   @apply text-white;
   @apply md:gap-10;
-  @apply md:py-1 pb-5;
+  @apply py-2 md:py-1 pb-5 md:pl-0 pl-2;
 }
 
 img.logo {
