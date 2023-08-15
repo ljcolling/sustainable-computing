@@ -15,6 +15,9 @@ import travel from "../text/travel.md";
 
 import schedule from "../text/programme.json";
 
+/* import { BiChevronUp } from "react-icons/bi"; */
+import {BsChevronUp} from "react-icons/bs"
+import {AiOutlineMenu} from "react-icons/ai"
 type row = {
     start: string;
     finish: string;
@@ -50,7 +53,7 @@ const SubPage = ({ text, id, children }: { text: string, id: string, children?: 
         {text}
       </Markdown>
       {children}
-      <div className="pb-5"><a href="#nav"><span className="text-xs text-gray-500">Return to top</span></a></div>
+      <p className="pb-5"><a href="#nav"><span className="text-xs text-gray-500 flex"><BsChevronUp />Return to top</span></a></p>
     </div>
   )
 }
@@ -150,14 +153,15 @@ function Navbar() {
 
   return (
     <nav id="nav" className="flex flex-col md:justify-end w-full bg-black">
-      <button
+      <span className="mx-auto"><button
         className="md:hidden text-white py-5"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded)
         }}
       >
-        MENU
+        <AiOutlineMenu />
       </button>
+      </span>
       <div
         className={
           isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
@@ -196,9 +200,9 @@ export default function Home() {
               Join us for a free workshop on Green Research Computing for Health & Life Sciences at the prestigious Wellcome Trust in London!
             </p>
           </div>
-          <Navbar />
         </header>
         <main className="container mx-auto bg-white max-w-7xl">
+        <Navbar />
           <div className="px-10 py-10">
             <article className="article">
               <SubPage text={introduction.toString()} id="about" />
