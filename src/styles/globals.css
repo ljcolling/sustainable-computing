@@ -40,12 +40,12 @@ tr, td {
   @apply md:py-5;
   @apply pt-5;
   @apply md:px-10;
-  @apply md:bg-black;
+  /* @apply md:bg-black; */
 }
 
 .navigation-menu {
   @apply hidden md:block;
-  @apply bg-black;
+  @apply bg-zinc-200;
   @apply md:relative absolute;
   @apply md:p-0 p-5;
   @apply w-full;
@@ -60,7 +60,7 @@ tr, td {
   @apply text-base;
   @apply hover:text-blue-500;
   @apply duration-500;
-  @apply text-white;
+  @apply text-zinc-800;
   @apply md:gap-10;
   @apply py-2 md:py-1 pb-5 md:pl-0 pl-2;
 }

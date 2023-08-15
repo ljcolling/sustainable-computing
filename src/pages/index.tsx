@@ -152,9 +152,9 @@ function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
-    <nav id="nav" className="flex flex-col md:justify-end w-full bg-black">
+    <nav id="nav" className="flex flex-col md:justify-end w-full bg-zinc-200">
       <span className="mx-auto"><button
-        className="md:hidden text-white py-5"
+        className="md:hidden text-zinc-800 py-5"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded)
         }}
@@ -187,18 +187,20 @@ export default function Home() {
         <meta name="description" content="Sustainable computing for the life and health sciences" />
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto bg-gray-200 drop-shadow-lg backdrop-blur-lg">
-        <header className="bg-cover max-w-7xl mx-auto w-full" style={{ backgroundImage: `url("hero.jpg")`, backgroundPosition: `bottom` }}>
-          <h1 className="text-white text-5xl px-10 pt-16 pb-16 font-bold">
+        <header className="bg-cover max-w-7xl mx-auto w-full backdrop-filter" style={{ backgroundImage: `url("hero_new.jpeg")`, backgroundPosition: `center` }}>
+          <div className="text-slate-200 bg-transparent backdrop-blur backdrop-filter-sm"> 
+          <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
             Green Research Computing for Health & Life Sciences
           </h1>
           <div className="pb-30 px-10">
-            <p className="pb-5 text-2xl text-white font-bold">
+            <p className="pb-5 text-2xl font-bold">
               Are you a life sciences researcher who uses computing in your work?<br />
               Are you concerned about the carbon footprint of your research?
             </p>
-            <p className="text-2xl text-white pb-5 font-bold">
+            <p className="pb-5 text-2xl font-bold">
               Join us for a free workshop on Green Research Computing for Health & Life Sciences at the prestigious Wellcome Trust in London!
             </p>
+            </div>
           </div>
         </header>
         <main className="container mx-auto bg-white max-w-7xl">
