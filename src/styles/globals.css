@@ -52,12 +52,10 @@ tr, td {
   position: absolute;
   @apply bg-black;
   @apply p-8;
-  z-index: 999;
   @apply mx-auto;
   @apply mt-10;
   @apply w-full;
   @apply pt-2;
-  z-index: 999;
 }
 
 .menu-item {
