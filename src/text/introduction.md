@@ -8,16 +8,15 @@ CO<sub>2</sub> emissions*](https://doi.org/10.1016/j.patter.2021.100340). As the
 people who best understand our own work, we are ideally placed to reduce the
 carbon footprint of our research. As the need for computational power in
 research grows, including increasing adoption of AI tools, we must address the
-challenges and opportunities in making scientific computing more sustainable.
+challenges and opportunities in making scientific research computing more sustainable.
 
 
-This workshop is primarily aimed at researchers in life sciences (e.g.,
+This workshop is primarily aimed at researchers in the life sciences (e.g.,
 neuroscience, biology, biochemistry, genetics), but will have value for any
-researchers who rely on research computing. If you're interested in
-sustainability but unsure how to implement eco-friendly practices in your
-research computing, this event is tailor-made for you. We encourage attendance
-by practising researchers who may have minimal computing experience through to
-those who consider themselves to be proficient.
+researchers who rely on high-performance computing. If you're interested in reducing the
+carbon footprint of your research computing but are unsure how to do so, this event
+is tailor-made for you. You won't need to be an expert in computer science in order
+to benefit from this event.
 
 
 We are holding the workshop in person to facilitate discussion and debate.
@@ -32,10 +31,10 @@ using diverse approaches, giving you the ability to feed these insights back to
 your institution.
 
 -   Network with other health and life sciences researchers interested in
-sustainability, providing new opportunities for collaboration.
+reducing the carbon footprint of their comptuing, providing new opportunities
+for collaboration.
 
--   Contribute to an emerging community of climate-conscious scientists, helping
-to foster a more sustainable future for the scientific community and the planet.
+-   Contribute to an emerging community of climate-conscious scientists.
 
 We look forward to seeing you on November 7th.
 
