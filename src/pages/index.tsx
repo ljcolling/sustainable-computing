@@ -13,7 +13,7 @@ import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
 
-import schedule from "../text/programme.json";
+/* import schedule from "../text/programme.json"; */
 
 /* import { BiChevronUp } from "react-icons/bi"; */
 import {BsChevronUp} from "react-icons/bs"
