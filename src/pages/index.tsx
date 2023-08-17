@@ -76,8 +76,10 @@ const Row = ({ data }: { data: row }) => {
     return <tr>
       <td className="w-32"><span className="p-2 align-middle">{timeslot}</span></td>
       <td>
+        <div className="px-1">
         <span className="font-bold">{data.title}</span><br />
         <span className="font-bold">{data.person}</span>, <span className="italic">{data.affiliation} </span>
+        </div>
       </td>
     </tr>
   }
