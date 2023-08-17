@@ -12,6 +12,7 @@ import introduction from "../text/introduction.md";
 import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
+import tagline from "../text/tagline.md";
 
 /* import schedule from "../text/programme.json"; */
 
@@ -190,7 +191,7 @@ export default function Home() {
         <header className="bg-cover max-w-7xl mx-auto w-full backdrop-filter" style={{ backgroundImage: `url("hero_new.jpeg")`, backgroundPosition: `center` }}>
           <div className="text-slate-200 bg-transparent backdrop-blur backdrop-filter-sm"> 
           <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
-            Green Research Computing for Health & Life Sciences
+            Environmental impacts of computing in health & life sciences research
           </h1>
           <div className="pb-30 px-10">
             <p className="pb-5 text-2xl font-bold">
