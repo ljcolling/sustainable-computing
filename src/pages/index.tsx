@@ -189,7 +189,7 @@ export default function Home() {
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto bg-gray-200 drop-shadow-lg backdrop-blur-lg">
         <header className="bg-cover max-w-7xl mx-auto w-full backdrop-filter" style={{ backgroundImage: `url("hero_new.jpeg")`, backgroundPosition: `center` }}>
-          <div className="text-slate-200 bg-transparent backdrop-blur backdrop-filter-sm"> 
+          <div className="text-slate-50 bg-transparent backdrop-blur backdrop-filter-xl"> 
           <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
             Environmental impacts of computing in health & life sciences research
           </h1>
