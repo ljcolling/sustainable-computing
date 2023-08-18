@@ -28,13 +28,19 @@ type row = {
     affiliation: string;
 }
 
+
 const parsetime = (t: string) => {
-  t = t.split(" ")[0] + "T" + t.split(" ")[1] + "Z";
+  /* t = t.split(" ")[0] + "T" + t.split(" ")[1] + "Z"; */
   let event = new Date(t)
   return event.toLocaleTimeString('en-UK').slice(0, 5)
 }
 
-
+/*
+const parsetime = (t: string) => {
+  let time = date.split(" ")[1]
+  return time
+}
+*/
 
 const Markdown = ({ children, id }: { children: string, id: string }) => {
   return (
@@ -155,7 +161,7 @@ function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
-    <nav id="nav" className="flex flex-col md:justify-end w-full bg-zinc-200">
+    <nav id="nav" className="flex flex-col md:justify-end w-full bg-zinc-100">
       <span className="mx-auto"><button
         className="md:hidden text-zinc-800 py-5"
         onClick={() => {
@@ -209,7 +215,7 @@ export default function Home() {
         <main className="container mx-auto bg-white max-w-7xl">
         <Navbar />
           <div className="px-10 py-10">
-            <article className="article">
+            <article className="article divide-y">
               <SubPage text={introduction.toString()} id="about" />
               <SubPage text={programme.toString()} id="programme">
                 <Calendar></Calendar>

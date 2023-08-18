@@ -45,7 +45,8 @@ tr, td {
 
 .navigation-menu {
   @apply hidden md:block;
-  @apply bg-zinc-200;
+  @apply bg-zinc-50;
+  @apply border-b;
   @apply md:relative absolute;
   @apply md:p-0 p-5;
   @apply w-full;
@@ -54,6 +55,7 @@ tr, td {
 
 .navigation-menu.expanded {
   @apply block ;
+  /* @apply h-ful; */
 }
 
 .menu-item {
