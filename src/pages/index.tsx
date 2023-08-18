@@ -1,6 +1,6 @@
 import Document from "next/document";
 import Head from "next/head";
-import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 
@@ -157,8 +157,8 @@ const Calendar = () => {
 
 }
 
-function Navbar() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false)
+function Navbar({isNavExpanded, setIsNavExpanded} : {isNavExpanded: boolean, setIsNavExpanded :  Dispatch<SetStateAction<boolean>>}) {
+  /* const [isNavExpanded, setIsNavExpanded] = useState(false) */
 
   return (
     <nav id="nav" className="flex flex-col md:justify-end w-full bg-zinc-100">
@@ -189,13 +189,15 @@ function Navbar() {
 }
 
 export default function Home() {
+
+  const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false)
   return (
     <>
       <Head>
         <title>Sustainable computing workshop</title>
         <meta name="description" content="Sustainable computing for the life and health sciences" />
       </Head>
-      <div className="flex min-h-screen flex-col justify-top mx-auto bg-gray-200 drop-shadow-lg backdrop-blur-lg">
+      <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg backdrop-blur-lg">
         <header className="bg-cover max-w-7xl mx-auto w-full backdrop-filter" style={{ backgroundImage: `url("hero_new.jpeg")`, backgroundPosition: `center` }}>
           <div className="text-slate-50 bg-transparent backdrop-blur backdrop-filter-xl"> 
           <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
@@ -213,9 +215,9 @@ export default function Home() {
           </div>
         </header>
         <main className="container mx-auto bg-white max-w-7xl">
-        <Navbar />
+        <Navbar isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
           <div className="px-10 py-10">
-            <article className="article divide-y">
+            <article className={`article ${isNavExpanded ? "blur" : ""}`} >
               <SubPage text={introduction.toString()} id="about" />
               <SubPage text={programme.toString()} id="programme">
                 <Calendar></Calendar>
