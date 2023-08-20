@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 
-tr, td {
-  @apply border-solid border-2 border-black
+table {
+  @apply border-solid border-2 border-gray-500
 }
 
 
