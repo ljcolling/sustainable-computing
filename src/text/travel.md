@@ -1,6 +1,6 @@
 ## Travel
 
-We have limited funds available to support travel to the workshop for
+We have some limited funds available to support travel to the workshop for
 those who may struggle to cover the necessary funds and/or are
 travelling a long distance. To apply for a travel bursary, please
 [*complete this

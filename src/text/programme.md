@@ -1,6 +1,5 @@
-## Programme 
+## Programme
 
 This free one-day event will provide opportunities for education and
-discussion, as well as facilitation of new collaborations. The schedule
+discussion, as well as facilitation of new collaborations. The provisional schedule
 is as follows:
-
