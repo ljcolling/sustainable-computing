@@ -11,6 +11,7 @@ import introduction from "../text/introduction.md";
 import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
+import who from "../text/who.md";
 
 /* import schedule from "../text/programme.json"; */
 
@@ -70,11 +71,12 @@ const Row = ({ data }: { data: row }) => {
   let this_type: string = data.type_of
   let start = parsetime(data.start)
   let finish = parsetime(data.finish)
-  let timeslot = start + "–" + finish
+  let timeslot = start + "–" + finish + " GMT"
 
   if (this_type === "section") {
     return <tr>
-      <td className="font-bold bg-green-500"> <span className="p-2">{timeslot}</span></td>
+     {/* NOTE: Double check spacing  */}
+      <td className="font-bold bg-green-500 w-48"> <span className="p-2">{timeslot}</span></td>
       <td className="font-bold bg-green-500"> <span className="">{data.title}</span></td>
     </tr>
 
@@ -203,6 +205,7 @@ function Navbar({ isNavExpanded, setIsNavExpanded }: { isNavExpanded: boolean, s
       >
         <ul className="navbar">
           <li className="menu-item"><a onClick={() => { setIsNavExpanded(!isNavExpanded) }} href="#about" >About</a></li>
+          <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#who">Who is it for?</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#programme">Programme</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#registration">Registration</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#travel">Travel</a></li>
@@ -230,11 +233,12 @@ export default function Home() {
             </h1>
             <div className="pb-30 px-10">
               <p className="pb-5 text-2xl font-bold">
-                Are you a life sciences researcher who uses computing in your work?<br />
+                Are you a health or life sciences researcher who uses computing in your work?<br />
                 Are you concerned about the carbon footprint of your research?
               </p>
               <p className="pb-5 text-2xl font-bold">
-                Join us for a free workshop on Green Research Computing for Health & Life Sciences at the prestigious Wellcome Trust in London!
+                Join us for a free workshop on Greener Research Computing for Health & 
+                Life Sciences at the Wellcome Trust in London
               </p>
             </div>
           </div>
@@ -242,8 +246,10 @@ export default function Home() {
         <main className="container mx-auto bg-white max-w-7xl">
           <Navbar isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
           <div className="px-10 py-10">
-            <article className={`article ${isNavExpanded ? "blur" : ""}`} >
+            <article className={`article`} >
+            {/* <article className={`article ${isNavExpanded ? "blur" : ""}`} > */}
               <SubPage text={introduction.toString()} id="about" />
+              <SubPage text={who.toString()} id="who" />
               <SubPage text={programme.toString()} id="programme">
                 <Calendar></Calendar>
               </SubPage>

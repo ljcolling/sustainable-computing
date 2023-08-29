@@ -8,4 +8,4 @@ form*](https://docs.google.com/forms/d/e/1FAIpQLSeDExRm6yOuPEVFyOxMySfzVmxPQGM0J
 to provide some information and demonstrate how these funds would help
 you. The funds can include support for 1 night accommodation.
 Wherever possible, we encourage attendees to travel in a
-climate-responsible way, using public transport.
+climate-responsible way, using public transport, and avoiding aviation.
