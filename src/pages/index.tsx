@@ -71,12 +71,12 @@ const Row = ({ data }: { data: row }) => {
   let this_type: string = data.type_of
   let start = parsetime(data.start)
   let finish = parsetime(data.finish)
-  let timeslot = start + "–" + finish + " GMT"
+  let timeslot = start + "–" + finish
 
   if (this_type === "section") {
     return <tr>
      {/* NOTE: Double check spacing  */}
-      <td className="font-bold bg-green-500 w-48"> <span className="p-2">{timeslot}</span></td>
+      <td className="font-bold bg-green-500 w-32"> <span className="p-2">{timeslot}</span></td>
       <td className="font-bold bg-green-500"> <span className="">{data.title}</span></td>
     </tr>
 
