@@ -21,21 +21,15 @@ import { BsChevronUp } from "react-icons/bs";
 
 
 
-const parsetime = (t: string | undefined) => {
-  /* t = t.split(" ")[0] + "T" + t.split(" ")[1] + "Z"; */
-  if(t == undefined) {
-    return undefined
+const parsetime = (t?: string) => {
+
+  if (t == undefined) {
+    return ""
   }
   let event = new Date(t)
   return event.toLocaleTimeString('en-UK').slice(0, 5)
 }
 
-/*
-const parsetime = (t: string) => {
-  let time = date.split(" ")[1]
-  return time
-}
-*/
 
 const Markdown = ({ children, id }: { children: string, id: string }) => {
   return (
@@ -48,6 +42,10 @@ const Markdown = ({ children, id }: { children: string, id: string }) => {
   );
 };
 
+const ReturnButton = () => {
+return <button onClick={() => document.body.scrollIntoView()}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button>
+}
+
 const SubPage = ({ text, id, children }: { text: string, id: string, children?: ReactNode }) => {
   return (
     <div className="pt-8">
@@ -55,30 +53,27 @@ const SubPage = ({ text, id, children }: { text: string, id: string, children?: 
         {text}
       </Markdown>
       {children}
-      <p className="pb-5"><button onClick={() => document.body.scrollIntoView()}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button></p>
+      <p className="pb-1"><ReturnButton /></p>
     </div>
   )
 }
 
 
 const CalenderRow = ({ data }: { data: Row }) => {
-  //let i = 0;
-  let this_type = data.type_of
-  let start = parsetime(data.start)
-  let finish = parsetime(data.finish)
-  let timeslot = start + "–" + finish
 
-  if (this_type === "section") {
+  const start = parsetime(data.start)
+  const finish = parsetime(data.finish)
+  const timeslot = start + "–" + finish
+  
+  if (data.type_of === "section") {
     return <tr>
-     {/* NOTE: Double check spacing  */}
       <td className="font-bold bg-green-500 w-32"> <span className="p-2">{timeslot}</span></td>
       <td className="font-bold bg-green-500"> <span className="">{data.title}</span></td>
     </tr>
 
   }
-  if (this_type === "talk") {
+  if (data.type_of === "talk") {
     return <tr>
-      {/* <td className="w-32"><span className="p-2 align-middle">{timeslot}</span></td> */}
       <td colSpan={2}>
         <div className="px-4">
           <span className="font-bold">{data.title}</span><br />
@@ -87,16 +82,15 @@ const CalenderRow = ({ data }: { data: Row }) => {
       </td>
     </tr>
   }
-  if (this_type === "break") {
+  if (data.type_of === "break") {
     return <tr>
       <td className="bg-gray-300 w-32"><span className="p-2 align-middle">{timeslot}</span></td>
       <td className="bg-gray-300">{data.title}</td>
     </tr>
   }
 
-  if (this_type === "discussion") {
+  if (data.type_of === "discussion") {
     return <tr>
-      {/* <td className="w-32"><span className="p-2 align-middle">{timeslot}</span></td> */}
       <td colSpan={2}>
         <div className="px-4">{data.title}</div>
       </td>
@@ -110,14 +104,15 @@ type Row = {
   start?: string,
   finish?: string,
   type_of?: string,
-  title?: string, 
+  title?: string,
   person?: string,
-  affiliation?: string 
+  affiliation?: string
 
 }
 
 
-const Calendar = () => {
+const useCalendarData = () => {
+
   const [schedule, setSchedule] = useState<Row[]>()
   const [loaded, setLoaded] = useState<boolean>(false);
 
@@ -154,23 +149,29 @@ const Calendar = () => {
       })
       setSchedule(s)
       setLoaded(true)
-     
+
     }
     getdata()
 
   }, [loaded])
 
+  return { loaded, schedule }
+}
+
+const Calendar = () => {
+
+  const { loaded, schedule } = useCalendarData();
 
   return (
     <div className="container">
       <table className="mx-auto max-w-screen-md" cellPadding="5px" cellSpacing="5px">
         <thead className="font-bold">
-          {/* <tr><td>Time</td><td>Activity</td></tr> */}
         </thead>
         <tbody>
           {
-            !!!loaded ? null :
-              schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)
+            !!!loaded ? <p className="p-5 font-bold">Loading schedule...</p> :
+              schedule?.map((data: Row, index: number) =>
+                <CalenderRow data={data} key={index} />)
           }
         </tbody>
       </table>
@@ -232,7 +233,7 @@ export default function Home() {
                 Are you concerned about the carbon footprint of your research?
               </p>
               <p className="pb-5 text-2xl font-bold">
-                Join us for a free workshop on Greener Research Computing for Health & 
+                Join us for a free workshop on Greener Research Computing for Health &
                 Life Sciences at the Wellcome Trust in London
               </p>
             </div>
@@ -242,7 +243,7 @@ export default function Home() {
           <Navbar isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
           <div className="px-10 py-10">
             <article className={`article`} >
-            {/* <article className={`article ${isNavExpanded ? "blur" : ""}`} > */}
+              {/* <article className={`article ${isNavExpanded ? "blur" : ""}`} > */}
               <SubPage text={introduction.toString()} id="about" />
               <SubPage text={who.toString()} id="who" />
               <SubPage text={programme.toString()} id="programme">
