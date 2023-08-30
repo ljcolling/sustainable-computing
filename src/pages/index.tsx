@@ -18,19 +18,14 @@ import who from "../text/who.md";
 /* import { BiChevronUp } from "react-icons/bi"; */
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChevronUp } from "react-icons/bs";
-import { finished } from "stream/promises";
-type row = {
-  start: string;
-  finish: string;
-  type_of: string;
-  title: string;
-  person: string;
-  affiliation: string;
-}
 
 
-const parsetime = (t: string) => {
+
+const parsetime = (t: string | undefined) => {
   /* t = t.split(" ")[0] + "T" + t.split(" ")[1] + "Z"; */
+  if(t == undefined) {
+    return undefined
+  }
   let event = new Date(t)
   return event.toLocaleTimeString('en-UK').slice(0, 5)
 }
@@ -66,9 +61,9 @@ const SubPage = ({ text, id, children }: { text: string, id: string, children?: 
 }
 
 
-const Row = ({ data }: { data: row }) => {
+const CalenderRow = ({ data }: { data: Row }) => {
   //let i = 0;
-  let this_type: string = data.type_of
+  let this_type = data.type_of
   let start = parsetime(data.start)
   let finish = parsetime(data.finish)
   let timeslot = start + "–" + finish
@@ -112,18 +107,18 @@ const Row = ({ data }: { data: row }) => {
 }
 
 type Row = {
-  start: string | undefined,
-  finish: string | undefined,
-  type_of: string | undefined,
-  title: string | undefined,
-  person: string | undefined,
-  affiliation: string | undefined
+  start?: string,
+  finish?: string,
+  type_of?: string,
+  title?: string, 
+  person?: string,
+  affiliation?: string 
 
 }
 
 
 const Calendar = () => {
-  const [schedule, setSchedule] = useState<any>()//<Row | undefined>()
+  const [schedule, setSchedule] = useState<Row[]>()
   const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {
@@ -175,7 +170,7 @@ const Calendar = () => {
         <tbody>
           {
             !!!loaded ? null :
-              schedule.map((data: row, index: number) => <Row data={data} key={index} />)
+              schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)
           }
         </tbody>
       </table>
