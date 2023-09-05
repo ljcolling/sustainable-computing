@@ -249,7 +249,7 @@ export default function Home() {
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
         <header className="mx-auto md:max-w-7xl">
-          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3_small.jpg")`, backgroundPosition: `center` }}>
+          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3_small.jpeg")`, backgroundPosition: `center` }}>
             <div className="text-white bg-transparent backdrop-blur-sm contrast-120">
               <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
                 Environmental impacts of computing in health & life sciences research
