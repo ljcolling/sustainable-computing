@@ -18,6 +18,9 @@ import d from "../text/schedule.tsv"
 
 import ReactPlayer from "react-player";
 
+
+
+/* import { Player } from 'video-react'; */
 /* import schedule from "../text/programme.json"; */
 
 /* import { BiChevronUp } from "react-icons/bi"; */
@@ -246,7 +249,7 @@ export default function Home() {
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
         <header className="mx-auto md:max-w-7xl">
-          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3.jpeg")`, backgroundPosition: `center` }}>
+          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3_small.jpg")`, backgroundPosition: `center` }}>
             <div className="text-white bg-transparent backdrop-blur-sm contrast-120">
               <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
                 Environmental impacts of computing in health & life sciences research
@@ -284,7 +287,7 @@ export default function Home() {
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
               <SubPage text={resources.toString()} id="resources">
               <div className="pt-5">
-              <ReactPlayer url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
+              {/* <ReactPlayer url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" /> */}
               </div>
               </SubPage>
             </article>
