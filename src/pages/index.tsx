@@ -12,6 +12,8 @@ import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
 import who from "../text/who.md";
+import d from "../text/schedule.tsv"
+
 
 /* import schedule from "../text/programme.json"; */
 
@@ -30,8 +32,13 @@ const parsetime = (t?: string) => {
   return event.toLocaleTimeString('en-UK').slice(0, 5)
 }
 
-
-const Markdown = ({ children, id }: { children: string, id: string }) => {
+/**
+ * Render markdown
+ * @param children - The markdown text to render
+ * @param id - The id for the text block
+ * @returns Markdown component
+ */
+function Markdown({ children, id }: { children: string; id: string }) {
   return (
     <div id={id} className="prose prose-base mx-auto">
       <ReactMarkdown
@@ -40,10 +47,13 @@ const Markdown = ({ children, id }: { children: string, id: string }) => {
       </ReactMarkdown>
     </div>
   );
-};
+}
 
 const ReturnButton = () => {
-return <button onClick={() => document.body.scrollIntoView()}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button>
+  return <button onClick={() => {
+    document.body.scrollIntoView()
+    /* window.location.href="http://localhost:3000" */
+  }}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button>
 }
 
 const SubPage = ({ text, id, children }: { text: string, id: string, children?: ReactNode }) => {
@@ -59,17 +69,17 @@ const SubPage = ({ text, id, children }: { text: string, id: string, children?: 
 }
 
 
-const CalenderRow = ({ data }: { data: Row }) => {
+function CalenderRow({ data }: { data: Row; }) {
 
-  const start = parsetime(data.start)
-  const finish = parsetime(data.finish)
-  const timeslot = start + "–" + finish
-  
+  const start = parsetime(data.start);
+  const finish = parsetime(data.finish);
+  const timeslot = start + "–" + finish;
+
   if (data.type_of === "section") {
     return <tr>
       <td className="font-bold bg-green-500 w-32"> <span className="p-2">{timeslot}</span></td>
       <td className="font-bold bg-green-500"> <span className="">{data.title}</span></td>
-    </tr>
+    </tr>;
 
   }
   if (data.type_of === "talk") {
@@ -80,13 +90,13 @@ const CalenderRow = ({ data }: { data: Row }) => {
           <span className="font-bold">{data.person}</span>, <span className="italic">{data.affiliation} </span>
         </div>
       </td>
-    </tr>
+    </tr>;
   }
   if (data.type_of === "break") {
     return <tr>
       <td className="bg-gray-300 w-32"><span className="p-2 align-middle">{timeslot}</span></td>
       <td className="bg-gray-300">{data.title}</td>
-    </tr>
+    </tr>;
   }
 
   if (data.type_of === "discussion") {
@@ -94,71 +104,73 @@ const CalenderRow = ({ data }: { data: Row }) => {
       <td colSpan={2}>
         <div className="px-4">{data.title}</div>
       </td>
-    </tr>
+    </tr>;
   }
 
-  return <></>
+  return <></>;
 }
 
 type Row = {
-  start?: string,
-  finish?: string,
-  type_of?: string,
-  title?: string,
-  person?: string,
-  affiliation?: string
+  start: string,
+  finish: string,
+  type_of: string,
+  title: string,
+  person: string,
+  affiliation: string
 
 }
 
 
-const useCalendarData = () => {
+function useCalendarData() {
 
-  const [schedule, setSchedule] = useState<Row[]>()
+  const [schedule, setSchedule] = useState<Row[] | null>(null);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     async function getdata() {
-      let data = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv");
-      let d = await data.text()
-      let s = d.split("\r\n")
+
+      /* let data = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv"); */
+      /* let d = await data.text() */
+      let s: Row[] = d.split("\r\n")
         .map((l: string) => l.split("\t"))
         .slice(1)
-        .map((x) => {
-          return {
-            start: x[0],
-            finish: x[1],
-            type_of: x[2],
-            title: x[3],
-            person: x[4],
-            affiliation: x[5]
-          }
-        })
+        .map((x: string[]) => {
+          const r: Row = {
+            start: x[0] as string,
+            finish: x[1] as string,
+            type_of: x[2] as string,
+            title: x[3] as string,
+            person: x[4] as string,
+            affiliation: x[5] as string
+          };
+          return r;
+        });
 
 
-      const finish_cells = [...s.map((v, i) => v.type_of === "break" ? i - 1 : 0).filter((v) => v != 0), s.length - 1]
-      const finish_times = finish_cells.map(i => s.at(i)?.finish)
-      const sections = s.map((v, i) => v.type_of === "section" ? i + 1 : 0).filter((v) => v).map((v) => v - 1)
+      const finish_cells: number[] = [...s.map((v, i) => v.type_of === "break" ? i - 1 : 0).filter((v) => v != 0), s.length - 1];
+      const finish_times: string[] = finish_cells.map(i => s.at(i)?.finish as string);
+      const sections: number[] = s.map((v, i) => v.type_of === "section" ? i + 1 : 0).filter((v) => v).map((v) => v - 1);
       let index = 0;
       s.map((v, i) => {
         if (sections.includes(i)) {
-          v.finish = finish_times[index]
+          v.finish = finish_times[index] as string;
           index = index + 1;
-          return v
+          return v;
         }
-        return v
-      })
-      setSchedule(s)
-      setLoaded(true)
+        return v;
+      });
+      setSchedule(s);
+      setLoaded(true);
 
     }
-    getdata()
+    getdata();
 
-  }, [loaded])
+  }, [loaded]);
 
-  return { loaded, schedule }
+  return { loaded, schedule };
 }
 
-const Calendar = () => {
+function Calendar() {
 
   const { loaded, schedule } = useCalendarData();
 
@@ -168,15 +180,12 @@ const Calendar = () => {
         <thead className="font-bold">
         </thead>
         <tbody>
-          {
-            !!!loaded ? <p className="p-5 font-bold">Loading schedule...</p> :
-              schedule?.map((data: Row, index: number) =>
-                <CalenderRow data={data} key={index} />)
-          }
+          {!!!loaded ? null : //<p className="p-5 font-bold">Loading schedule...</p> :
+            schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)}
         </tbody>
       </table>
     </div>
-  )
+  );
 
 }
 
@@ -218,25 +227,27 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sustainable computing workshop</title>
-        <meta name="description" content="Sustainable computing for the life and health sciences" />
+        <title>Environmental impacts of computing in health & life sciences research</title>
+        <meta name="description" content="Environmental impacts of computing in health & life sciences research" />
       </Head>
-      <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg backdrop-blur-lg">
-        <header className="bg-cover max-w-7xl mx-auto w-full backdrop-filter" style={{ backgroundImage: `url("hero_new.jpeg")`, backgroundPosition: `center` }}>
-          <div className="text-slate-50 bg-transparent backdrop-blur backdrop-filter-xl">
-            <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
-              Environmental impacts of computing in health & life sciences research
-            </h1>
-            <div className="pb-30 px-10">
-              <p className="pb-5 text-2xl font-bold">
-                Are you a health or life sciences researcher who uses computing in your work?<br />
-                Are you concerned about the carbon footprint of your research?
-              </p>
-              <p className="pb-5 text-2xl font-bold">
-                Join us for a free workshop on Greener Research Computing for Health &
-                Life Sciences at the Wellcome Trust in London
-              </p>
+      <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
+        <header className="mx-auto max-w-7xl">
+          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3.jpeg")`, backgroundPosition: `center` }}>
+            <div className="text-white bg-transparent backdrop-blur-sm contrast-120">
+              <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
+                Environmental impacts of computing in health & life sciences research
+              </h1>
             </div>
+          </div>
+          <div className="pb-30 px-10 mx-auto bg-green-900 pt-5 text-white">
+            <p className="pb-5 text-2xl font-bold">
+              Are you a health or life sciences researcher who uses computing in your work?<br />
+              Are you concerned about the carbon footprint of your research?
+            </p>
+            <p className="pb-5 text-2xl font-bold">
+              Join us for a free workshop on Greener Research Computing for Health &
+              Life Sciences at the Wellcome Trust in London
+            </p>
           </div>
         </header>
         <main className="container mx-auto bg-white max-w-7xl">

@@ -16,10 +16,19 @@ const config = {
         type: 'asset/source',
       }
     )
+
+    config.module.rules.push(
+      {
+        test: /\.tsv$/,
+        // This is the asset module.
+        type: 'asset/source',
+      }
+    )
+
     return config
   },
 
-  pageExtensions: ['ts','tsx','js','jsx','md','mdx'],
+  pageExtensions: ['ts','tsx','js','jsx','md','mdx','tsv'],
   
   /**
    * If you have the "experimental: { appDir: true }" setting enabled, then you

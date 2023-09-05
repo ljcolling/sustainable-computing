@@ -1,0 +1,18 @@
+start	finish	type	title	person	affiliation
+2023-07-11 10:00	2023-07-11 10:00	section	Session 1 - The Big Picture		
+2023-07-11 10:00	2023-07-11 10:20	talk	Opening remarks: Why the environmental impact of computing matters for health & life scientists	Charlotte Rae	University of Sussex
+2023-07-11 10:20	2023-07-11 10:40	talk	How the environmental impacts of research are currently being addressed (role of funders and institutions)	Gabrielle Samuel	King's College London
+2023-07-11 10:40	2023-07-11 11:00	talk	Advancing environmentally sustainable research at Wellcome	Talia Caplan	Wellcome
+2023-07-11 11:00	2023-07-11 11:20	talk	Addressing environmental impacts in the lab	Martin Farely	GreenLab Associates; University College London
+2023-07-11 11:20	2023-07-11 11:40	break	Break		
+2023-07-11 11:40	2023-07-11 11:40	section	Session 2 - The Technical Side		
+2023-07-11 11:40	2023-07-11 12:00	talk	The carbon footprint of high-performance computing	Loïc Lannelongue	University of Cambridge
+2023-07-11 12:00	2023-07-11 12:20	talk	The UKRI Net Zero Digital Research Infrastructure (DRI) scoping project	Miranda MacFarlane	King's College London
+2023-07-11 12:20	2023-07-11 12:40	talk	Reducing the carbon footprint of digital pipelines: A case study	Nick Souter	University of Sussex
+2023-07-11 12:40	2023-07-11 13:00	talk	The benefits of efficient programming	Lincoln Colling	University of Sussex; Software Sustainability Institute
+2023-07-11 13:00	2023-07-11 14:00	break	Meat-free lunch		
+2023-07-11 14:00	2023-07-11 14:00	section	Session 3 - Breakout Discussion		
+2023-07-11 14:00	2023-07-11 15:00	discussion	Separate moderated group discussions concerning steps you can take in your own work to reduce the carbon footprint of your computing, as well as barriers and potential solutions		
+2023-07-11 15:00	2023-07-11 15:30	break	Break	 	
+2023-07-11 15:30	2023-07-11 15:30	section	Session 4 - Feedback		
+2023-07-11 15:30	2023-07-11 16:00	discussion	Feedback from group discussions summarised by table moderators, followed by closing remarks.		
