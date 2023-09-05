@@ -59,8 +59,22 @@ table {
   @apply z-20;
 }
 
+.reg {
+    @apply py-2;
+    @apply px-4;
+    @apply border-black;
+    @apply drop-shadow-md;
+    @apply bg-green-900;
+    @apply hover:bg-green-700;
+    @apply text-white;
+    @apply no-underline;
+    @apply rounded-lg;
+    @apply cursor-pointer;
+  }
+
 .menu-item {
   @apply text-base;
+   /* @apply text-sm; */
   @apply hover:text-blue-500;
   @apply duration-500;
   @apply text-zinc-800;

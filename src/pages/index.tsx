@@ -12,8 +12,11 @@ import programme from "../text/programme.md";
 import registration from "../text/registration.md";
 import travel from "../text/travel.md";
 import who from "../text/who.md";
+import about from "../text/about_this_event.md";
+import resources from "../text/resources.md"
 import d from "../text/schedule.tsv"
 
+import ReactPlayer from "react-player";
 
 /* import schedule from "../text/programme.json"; */
 
@@ -56,14 +59,15 @@ const ReturnButton = () => {
   }}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button>
 }
 
-const SubPage = ({ text, id, children }: { text: string, id: string, children?: ReactNode }) => {
+const SubPage = ({ text, id, hidereturn, children }: { text: string, id: string, hidereturn?: boolean, children?: ReactNode }) => {
+  const show = hidereturn === undefined || hidereturn == true ? true : false;
   return (
     <div className="pt-8">
       <Markdown id={id}>
         {text}
       </Markdown>
       {children}
-      <p className="pb-1"><ReturnButton /></p>
+    { show ? <p className="pb-1"><ReturnButton /></p> : null }
     </div>
   )
 }
@@ -214,12 +218,22 @@ function Navbar({ isNavExpanded, setIsNavExpanded }: { isNavExpanded: boolean, s
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#programme">Programme</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#registration">Registration</a></li>
           <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#travel">Travel</a></li>
-          <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#code_of_conduct">Code of Conduct</a></li>
+          {/* <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#code_of_conduct">Code of Conduct</a></li> */}
+          <li className="menu-item"><a onClick={() => setIsNavExpanded(!isNavExpanded)} href="#resources">Resources</a></li>
         </ul>
       </div>
     </nav>
   );
 }
+
+const Register = () => {
+  return (<div className="flex mx-auto py-5">
+    <a href="https://www.tickettailor.com/events/universityofsussex/986909" target="_blank" className="reg">Register here</a>
+    {/* <button onClick={() => {} } className="p-2 border-green-900 bg-green-900 hover:bg-green-700 border rounded-xl text-white">Register here</button> */}
+    </div>)
+}
+
+
 
 export default function Home() {
 
@@ -231,7 +245,7 @@ export default function Home() {
         <meta name="description" content="Environmental impacts of computing in health & life sciences research" />
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
-        <header className="mx-auto max-w-7xl">
+        <header className="mx-auto md:max-w-7xl">
           <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3.jpeg")`, backgroundPosition: `center` }}>
             <div className="text-white bg-transparent backdrop-blur-sm contrast-120">
               <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
@@ -250,19 +264,29 @@ export default function Home() {
             </p>
           </div>
         </header>
-        <main className="container mx-auto bg-white max-w-7xl">
+        <main className="container mx-auto bg-white md:max-w-7xl">
           <Navbar isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
           <div className="px-10 py-10">
             <article className={`article`} >
               {/* <article className={`article ${isNavExpanded ? "blur" : ""}`} > */}
-              <SubPage text={introduction.toString()} id="about" />
+              <SubPage text={introduction.toString()} id="none" hidereturn={false}>
+                <Register></Register>
+              </SubPage>
+              <SubPage text={about.toString()} id="about" />
               <SubPage text={who.toString()} id="who" />
               <SubPage text={programme.toString()} id="programme">
                 <Calendar></Calendar>
               </SubPage>
-              <SubPage text={registration.toString()} id="registration" />
+              <SubPage text={registration.toString()} id="registration"> 
+                <Register></Register>
+              </SubPage>
               <SubPage text={travel.toString()} id="travel" />
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
+              <SubPage text={resources.toString()} id="resources">
+              <div className="pt-5">
+              <ReactPlayer url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
+              </div>
+              </SubPage>
             </article>
           </div>
         </main>

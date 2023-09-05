@@ -10,7 +10,7 @@ For online attendees, stream links will be provided to those registered.
 
 To register for online or in-person attendance at this event, please
 [go here](https://www.tickettailor.com/events/universityofsussex/986909).
-Registration will close on *1st November*. If attempting to register after this
+Registration will close on *17th October*. If attempting to register after this
 date, please [email us](mailto:N.Souter@sussex.ac.uk) to enquire about spaces on
 the waiting list.
 
