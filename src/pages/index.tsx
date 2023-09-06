@@ -200,7 +200,7 @@ function Navbar({ isNavExpanded, setIsNavExpanded }: { isNavExpanded: boolean, s
   /* const [isNavExpanded, setIsNavExpanded] = useState(false) */
 
   return (
-    <nav id="nav" className="flex flex-col md:justify-end w-full bg-zinc-100">
+    <nav id="nav" className="flex flex-col md:justify-end bg-zinc-100">
       <span className="mx-auto"><button
         className="md:hidden text-zinc-800 py-5"
         onClick={() => {
@@ -236,6 +236,34 @@ const Register = () => {
     </div>)
 }
 
+const Hero = () => {
+  
+
+  return (
+    <>
+    <div className="bg-cover w-full h-96" style={{ backgroundImage: `url("hero3_small.jpeg")`, backgroundPosition: `center` }}>
+      </div>
+      <div className="text-white contrast-120">
+        <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
+          Environmental impacts of computing in health & life sciences research
+        </h1>
+    </div>
+    </>
+  )
+
+}
+
+const Hero2 = () => {
+  return (
+    <div className="w-full h-auto py-16 bg-[url('https://www.eicworkshop.info/hero3.jpeg')] bg-cover bg-center flex justify-center items-center">
+          <div className="flex flex-col justify-center items-center">
+              <h1 className=" text-center text-5xl text-white font-bold drop-shadow-lg">
+          Environmental impacts of computing in <br /> health & life sciences research
+              </h1>
+          </div>
+      </div>
+    )
+}
 
 
 export default function Home() {
@@ -248,14 +276,8 @@ export default function Home() {
         <meta name="description" content="Environmental impacts of computing in health & life sciences research" />
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
-        <header className="mx-auto md:max-w-7xl">
-          <div className="bg-cover w-full" style={{ backgroundImage: `url("hero3_small.jpeg")`, backgroundPosition: `center` }}>
-            <div className="text-white bg-transparent backdrop-blur-sm contrast-120">
-              <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
-                Environmental impacts of computing in health & life sciences research
-              </h1>
-            </div>
-          </div>
+        <header className="mx-auto max-w-7xl">
+          <Hero2 />
           <div className="pb-30 px-10 mx-auto bg-green-900 pt-5 text-white">
             <p className="pb-5 text-2xl font-bold">
               Are you a health or life sciences researcher who uses computing in your work?<br />
@@ -267,7 +289,7 @@ export default function Home() {
             </p>
           </div>
         </header>
-        <main className="container mx-auto bg-white md:max-w-7xl">
+        <main className="container mx-auto bg-white max-w-7xl">
           <Navbar isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
           <div className="px-10 py-10">
             <article className={`article`} >
@@ -287,7 +309,7 @@ export default function Home() {
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
               <SubPage text={resources.toString()} id="resources">
               <div className="pt-5">
-              <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
+              {/* <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" /> */}
               </div>
               </SubPage>
             </article>

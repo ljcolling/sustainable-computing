@@ -32,7 +32,7 @@ table {
   @apply text-sm;
 }
 
-.navbar {
+ .navbar {
   @apply md:flex flex-row;
   @apply md:justify-end;
   @apply md:flex-row;
@@ -40,14 +40,17 @@ table {
   @apply md:py-5;
   @apply pt-5;
   @apply md:px-10;
-  /* @apply md:bg-black; */
 }
+
 
 .navigation-menu {
   @apply hidden md:block;
   @apply bg-zinc-50;
+  @apply bg-white;
   @apply border-b;
   @apply md:relative absolute;
+  @apply z-20;
+  /* @apply absolute; */
   @apply md:p-0 p-5;
   @apply w-full;
   @apply md:mt-0 mt-10
@@ -58,6 +61,19 @@ table {
   @apply bg-white;
   @apply z-20;
 }
+
+.menu-item {
+  @apply text-base;
+   /* @apply text-sm; */
+  @apply hover:text-blue-500;
+  @apply duration-500;
+  @apply text-zinc-800;
+  @apply md:gap-10;
+  @apply text-black;
+  /* @apply bg-black; */
+  @apply py-2 md:py-1 pb-5 md:pl-0 pl-2;
+}
+
 
 .reg {
     @apply py-2;
@@ -72,15 +88,7 @@ table {
     @apply cursor-pointer;
   }
 
-.menu-item {
-  @apply text-base;
-   /* @apply text-sm; */
-  @apply hover:text-blue-500;
-  @apply duration-500;
-  @apply text-zinc-800;
-  @apply md:gap-10;
-  @apply py-2 md:py-1 pb-5 md:pl-0 pl-2;
-}
+
 
 img.logo {
     width: 220px;  
