@@ -255,7 +255,7 @@ const Hero = () => {
 
 const Hero2 = () => {
   return (
-    <div className="w-full h-auto py-16 bg-[url('https://www.eicworkshop.info/hero3.jpeg')] bg-cover bg-center flex justify-center items-center">
+    <div className="w-full h-auto py-16 bg-[url('https://www.eicworkshop.info/hero3_small_blur.jpeg')] bg-cover bg-center flex justify-center items-center">
           <div className="flex flex-col justify-center items-center">
               <h1 className=" text-center text-5xl text-white font-bold drop-shadow-lg">
           Environmental impacts of computing in <br /> health & life sciences research
