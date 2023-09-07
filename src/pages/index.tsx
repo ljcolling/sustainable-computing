@@ -317,7 +317,7 @@ export default function Home() {
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
               <SubPage text={resources.toString()} id="resources">
               <div className="pt-5">
-              {/* <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" /> */}
+              <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
               </div>
               </SubPage>
             </article>
