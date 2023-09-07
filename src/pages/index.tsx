@@ -14,7 +14,9 @@ import travel from "../text/travel.md";
 import who from "../text/who.md";
 import about from "../text/about_this_event.md";
 import resources from "../text/resources.md"
-import d from "../text/schedule.tsv"
+/* import d from "../text/schedule.tsv" */
+import s from "../text/schedule.json"
+const schedule = s as Row[];
 
 import ReactPlayer from "react-player";
 
@@ -128,16 +130,12 @@ type Row = {
 }
 
 
-function useCalendarData() {
-
-  const [schedule, setSchedule] = useState<Row[] | null>(null);
-  const [loaded, setLoaded] = useState<boolean>(false);
-
+/*
   useEffect(() => {
     async function getdata() {
 
-      /* let data = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv"); */
-      /* let d = await data.text() */
+      // let data = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv");
+      // let d = await data.text() 
       let s: Row[] = d.split("\r\n")
         .map((l: string) => l.split("\t"))
         .slice(1)
@@ -166,6 +164,8 @@ function useCalendarData() {
         }
         return v;
       });
+      console.log(s)
+      window.s = s;
       setSchedule(s);
       setLoaded(true);
 
@@ -176,10 +176,18 @@ function useCalendarData() {
 
   return { loaded, schedule };
 }
+*/
+/* function useCalendarData() { */
+
+  /* const [schedule, setSchedule] = useState<Row[] | null>(null); */
+  /* const [loaded, setLoaded] = useState<boolean>(false); */
+
 
 function Calendar() {
 
-  const { loaded, schedule } = useCalendarData();
+  /* const { loaded, schedule } = useCalendarData(); */
+  const loaded = true;
+  /* const schedule = s; */
 
   return (
     <div className="container">
@@ -309,7 +317,7 @@ export default function Home() {
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
               <SubPage text={resources.toString()} id="resources">
               <div className="pt-5">
-              <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
+              {/* <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" /> */}
               </div>
               </SubPage>
             </article>

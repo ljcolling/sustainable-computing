@@ -38,7 +38,7 @@ table {
   @apply md:flex-row;
   @apply gap-10;
   @apply md:py-5;
-  @apply pt-5;
+  @apply mb-0;
   @apply md:px-10;
 }
 
@@ -53,12 +53,14 @@ table {
   /* @apply absolute; */
   @apply md:p-0 p-5;
   @apply w-full;
-  @apply md:mt-0 mt-10
+  @apply md:mt-0 mt-10;
 }
 
 .navigation-menu.expanded {
   @apply block;
   @apply bg-white;
+  @apply mt-14;
+  @apply transition ease-in-out delay-150 duration-75;
   @apply z-20;
 }
 
