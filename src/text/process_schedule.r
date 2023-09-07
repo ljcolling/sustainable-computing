@@ -1,13 +1,20 @@
-s <- readr::read_tsv("./schedule.tsv")
-s[1,2] <- s[5,2]
 
-s[7,2] <- s[11,2]
+url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv"
+s <- readr::read_tsv(url)
 
-s[13,2] <- s[14,2]
+finish <- c(s[["type"]] |> grepl(pattern = "break") |> which() |> (\(x) x - 1)(), nrow(s))
+start <- s[["type"]] |> grepl(pattern = "section") |> which()
 
-s[16,2] <- s[17,2]
+markers <- tibble::tibble(
+  sta = start,
+  fin = finish
+)
 
-s |> dplyr::rename(type_of = type) -> s
+purrr::pwalk(markers, function(sta, fin) {
+  s[sta, 2] <<- s[fin, 2]
+})
+
+s <- s |> dplyr::rename(type_of = type)
 
 s |> jsonlite::toJSON() |>
   readr::write_lines("./schedule.json")
