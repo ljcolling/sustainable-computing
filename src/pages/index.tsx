@@ -14,18 +14,24 @@ import travel from "../text/travel.md";
 import who from "../text/who.md";
 import about from "../text/about_this_event.md";
 import resources from "../text/resources.md"
-/* import d from "../text/schedule.tsv" */
+
 import s from "../text/schedule.json"
+
+type Row = {
+  start: string,
+  finish: string,
+  type_of: string,
+  title: string,
+  person: string,
+  affiliation: string
+
+}
+
 const schedule = s as Row[];
 
 import ReactPlayer from "react-player";
 
 
-
-/* import { Player } from 'video-react'; */
-/* import schedule from "../text/programme.json"; */
-
-/* import { BiChevronUp } from "react-icons/bi"; */
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChevronUp } from "react-icons/bs";
 
@@ -119,75 +125,10 @@ function CalenderRow({ data }: { data: Row; }) {
   return <></>;
 }
 
-type Row = {
-  start: string,
-  finish: string,
-  type_of: string,
-  title: string,
-  person: string,
-  affiliation: string
 
-}
-
-
-/*
-  useEffect(() => {
-    async function getdata() {
-
-      // let data = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSGQerGa8JQxAj-a-I1vJz-SMLAmpsfqwp36My4vMqVxVzhpLP2t7pPyA1SMUQXB7Ebh7i7guxYCF_0/pub?output=tsv");
-      // let d = await data.text() 
-      let s: Row[] = d.split("\r\n")
-        .map((l: string) => l.split("\t"))
-        .slice(1)
-        .map((x: string[]) => {
-          const r: Row = {
-            start: x[0] as string,
-            finish: x[1] as string,
-            type_of: x[2] as string,
-            title: x[3] as string,
-            person: x[4] as string,
-            affiliation: x[5] as string
-          };
-          return r;
-        });
-
-
-      const finish_cells: number[] = [...s.map((v, i) => v.type_of === "break" ? i - 1 : 0).filter((v) => v != 0), s.length - 1];
-      const finish_times: string[] = finish_cells.map(i => s.at(i)?.finish as string);
-      const sections: number[] = s.map((v, i) => v.type_of === "section" ? i + 1 : 0).filter((v) => v).map((v) => v - 1);
-      let index = 0;
-      s.map((v, i) => {
-        if (sections.includes(i)) {
-          v.finish = finish_times[index] as string;
-          index = index + 1;
-          return v;
-        }
-        return v;
-      });
-      console.log(s)
-      window.s = s;
-      setSchedule(s);
-      setLoaded(true);
-
-    }
-    getdata();
-
-  }, [loaded]);
-
-  return { loaded, schedule };
-}
-*/
-/* function useCalendarData() { */
-
-  /* const [schedule, setSchedule] = useState<Row[] | null>(null); */
-  /* const [loaded, setLoaded] = useState<boolean>(false); */
 
 
 function Calendar() {
-
-  /* const { loaded, schedule } = useCalendarData(); */
-  const loaded = true;
-  /* const schedule = s; */
 
   return (
     <div className="container">
@@ -195,8 +136,7 @@ function Calendar() {
         <thead className="font-bold">
         </thead>
         <tbody>
-          {!!!loaded ? null : //<p className="p-5 font-bold">Loading schedule...</p> :
-            schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)}
+          { schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)}
         </tbody>
       </table>
     </div>
@@ -205,7 +145,7 @@ function Calendar() {
 }
 
 function Navbar({ isNavExpanded, setIsNavExpanded }: { isNavExpanded: boolean, setIsNavExpanded: Dispatch<SetStateAction<boolean>> }) {
-  /* const [isNavExpanded, setIsNavExpanded] = useState(false) */
+
 
   return (
     <nav id="nav" className="flex flex-col md:justify-end bg-zinc-100">
@@ -240,28 +180,11 @@ function Navbar({ isNavExpanded, setIsNavExpanded }: { isNavExpanded: boolean, s
 const Register = () => {
   return (<div className="flex mx-auto py-5">
     <a href="https://www.tickettailor.com/events/universityofsussex/986909" target="_blank" className="reg">Register here</a>
-    {/* <button onClick={() => {} } className="p-2 border-green-900 bg-green-900 hover:bg-green-700 border rounded-xl text-white">Register here</button> */}
     </div>)
 }
 
+
 const Hero = () => {
-  
-
-  return (
-    <>
-    <div className="bg-cover w-full h-96" style={{ backgroundImage: `url("hero3_small.jpeg")`, backgroundPosition: `center` }}>
-      </div>
-      <div className="text-white contrast-120">
-        <h1 className="text-5xl px-10 pt-16 pb-16 font-bold">
-          Environmental impacts of computing in health & life sciences research
-        </h1>
-    </div>
-    </>
-  )
-
-}
-
-const Hero2 = () => {
   return (
     <div className="w-full h-auto py-16 bg-[url('https://www.eicworkshop.info/hero3_small_blur.jpeg')] bg-cover bg-center flex justify-center items-center">
           <div className="flex flex-col justify-center items-center">
@@ -285,7 +208,7 @@ export default function Home() {
       </Head>
       <div className="flex min-h-screen flex-col justify-top mx-auto drop-shadow-lg ">
         <header className="mx-auto max-w-7xl">
-          <Hero2 />
+          <Hero />
           <div className="pb-30 px-10 mx-auto bg-green-900 pt-5 text-white">
             <p className="pb-5 text-2xl font-bold">
               Are you a health or life sciences researcher who uses computing in your work?<br />
