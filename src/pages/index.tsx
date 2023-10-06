@@ -66,7 +66,6 @@ function Markdown({ children, id }: { children: string; id: string }) {
 const ReturnButton = () => {
   return <button onClick={() => {
     document.body.scrollIntoView()
-    /* window.location.href="http://localhost:3000" */
   }}><span className="text-xs text-gray-500 flex underline underline-offset-2"><BsChevronUp />Return to top</span></button>
 }
 
