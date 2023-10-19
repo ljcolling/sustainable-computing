@@ -1,3 +1,6 @@
+<div style="display:flex;justify-content:center;font-weight:bold;margin-left:auto;margin-right:auto;font-size:120%">
+Extended deadline 24th Oct 2023
+</div>
 
 __The first Environmental Impacts of Computing in Health & Life Sciences
 Research Workshop will take place on the 7th of November, 2023.__
