@@ -1,5 +1,5 @@
-<div style="display:flex;justify-content:center;font-weight:bold;margin-left:auto;margin-right:auto;font-size:120%">
-Extended deadline 24th October
+<div style="display:flex;justify-content:center;font-weight:bold;margin-left:auto;margin-right:auto;font-size:120%;">
+<p><a href="EICProgramme.pdf">Click here</a>  to download a digital version of the full workshop programme</p>
 </div>
 
 __The first Environmental Impacts of Computing in Health & Life Sciences

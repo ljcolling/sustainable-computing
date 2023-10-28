@@ -72,7 +72,7 @@ const ReturnButton = () => {
 const SubPage = ({ text, id, hidereturn, children }: { text: string, id: string, hidereturn?: boolean, children?: ReactNode }) => {
   const show = hidereturn === undefined || hidereturn == true ? true : false;
   return (
-    <div className="pt-8">
+    <div className="pb-8">
       <Markdown id={id}>
         {text}
       </Markdown>
