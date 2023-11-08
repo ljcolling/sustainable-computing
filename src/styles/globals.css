@@ -103,6 +103,14 @@ img.logo {
   vertical-align: middle;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
 /* Nav bar stuff */
 
 /*

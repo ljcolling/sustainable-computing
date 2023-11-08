@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, Suspense, useEffect, useState } from "react";
 
 
 import ReactMarkdown from "react-markdown";
@@ -135,7 +135,7 @@ function Calendar() {
         <thead className="font-bold">
         </thead>
         <tbody>
-          { schedule?.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)}
+          { schedule.map((data: Row, index: number) => <CalenderRow data={data} key={index} />)}
         </tbody>
       </table>
     </div>
