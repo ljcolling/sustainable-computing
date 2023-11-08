@@ -24,7 +24,7 @@ Infrastructure (DRI) scoping project](/slides/PDF/6_eic_macfarlane.pdf)
 
 - Lincoln Colling (Software Sustainability Institute): [Benefits of efficient programming](/slides/PDF/8_eic_colling.pdf)
 
-
+- Charlotte Rae (University of Sussex): [Closing remarks](/slides/PDF/9_eic_closing_remarks.pdf)
 
 ---
 
