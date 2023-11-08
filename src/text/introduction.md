@@ -11,14 +11,14 @@ environmentally sustainable computational research. To join, please fill out the
 this brief [google
 form.](https://docs.google.com/forms/d/e/1FAIpQLSdR3-FrPrjjrdsJFxgWjPLcCatIAAkn2Q--ZXYiyjAMUN-OLg/viewform)
 
-
-<!-- <div style="display:flex;justify-content:center;font-weight:bold;margin-left:auto;margin-right:auto;font-size:120%;">
-<p><a href="EICProgramme.pdf">Click here</a>  to download a digital version of the full workshop programme</p>
-</div> -->
-
-
-
 ---
+
+<div style="display:flex;justify-content:center;margin-left:auto;margin-right:auto;">
+<p><a href="EICProgramme.pdf">Click here</a>  to download a digital version of the full workshop programme</p>
+</div>
+
+
+
 
 __The first Environmental Impacts of Computing in Health & Life Sciences
 Research Workshop will take place on the 7th of November, 2023.__
