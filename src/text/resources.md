@@ -1,7 +1,11 @@
+
 ## Resources
 
-Below you can find copies of the presentations:
+Below you can find recordings of the talks and links to the slides.
 
+<br />
+
+<!--
 - Charlotte Rae (University of Sussex): [Opening remarks: Why the environmental
 impact of computing matters for health & life scientists](/slides/PDF/1_eic_rae.pdf)
 
@@ -27,7 +31,7 @@ Infrastructure (DRI) scoping project](/slides/PDF/6_eic_macfarlane.pdf)
 - Charlotte Rae (University of Sussex): [Closing remarks](/slides/PDF/9_eic_closing_remarks.pdf)
 
 ---
-
 For an example of the kind of topics we'll be covering, check out this short
 video from one of our workshop organisers:
+-->
 

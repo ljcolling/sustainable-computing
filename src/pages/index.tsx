@@ -13,7 +13,8 @@ import registration from "../text/registration.md";
 import travel from "../text/travel.md";
 import who from "../text/who.md";
 import about from "../text/about_this_event.md";
-import resources from "../text/resources.md"
+import resources from "../text/resources.md";
+import preview from "../text/preview.md";
 
 import s from "../text/schedule.json"
 
@@ -46,6 +47,74 @@ const parsetime = (t?: string) => {
   return event.toLocaleTimeString('en-UK').slice(0, 5)
 }
 
+type Person = {
+  name: String,
+  affiliation: String
+}
+
+type Talk = {
+  person: Person,
+  title: string,
+  slides: string,
+  video: string
+}
+
+
+const talk_array = [["Charlotte Rae", "University of Sussex", "Opening remarks: Why the environmental impact of computing matters for health & life scientists", "/slides/PDF/1_eic_rae.pdf", "https://www.youtube.com/watch?v=Osxy7b9TH-M&"],
+["Gabrielle Samuel","King's College London","How are the environmental impacts of research currently being addressed","/slides/PDF/2_eic_samuel.pdf","https://www.youtube.com/watch?v=vRf0ZsB56RM"],
+["Talia Caplan"," Wellcome","Advancing environmentally sustainable research","/slides/PDF/3_eic_caplan.pdf","https://www.youtube.com/watch?v=0hNtorXUmLI"],
+["Martin Farley","GreenLab Associates; University College London","Green Labs and more","/slides/PDF/4_eic_farley.pdf","https://www.youtube.com/watch?v=NUANDFUikjg"],
+["Loïc Lannelongue","University of Cambridge","Estimating the carbon footprint of computing in science","/slides/PDF/5_eic_lannelongue.pdf","https://www.youtube.com/watch?v=-WVaQu2xrJw"],
+["Miranda MacFarlane","King's College London","[UKRI Net Zero Digital Research Infrastructure (DRI) scoping project","/slides/PDF/6_eic_macfarlane.pdf","https://www.youtube.com/watch?v=iWgzYXpSvrg"],
+["Nick Souter","University of Sussex","Reducing the carbon footprint of digital pipelines: A case study from MRI","/slides/PDF/7_eic_souter.pdf","https://www.youtube.com/watch?v=XDXLNiJ4QJk"],
+["Lincoln Colling","Software Sustainability Institute","Benefits of efficient programming","/slides/PDF/8_eic_colling.pdf","https://www.youtube.com/watch?v=6HurlFRgQeM"],
+["Charlotte Rae","University of Sussex","Closing remarks","/slides/PDF/9_eic_closing_remarks.pdf","https://www.youtube.com/watch?v=-QYp2tO8pFk"]]
+
+const talks: Talk[] = talk_array.map((x) => {
+  let name = x[0] as string
+  let affiliation = x[1] as string
+  let title = x[2] as string
+  let slides = x[3] as string
+  let video = x[4] as string
+
+  let person: Person = {
+    name: name,
+    affiliation: affiliation
+  }
+
+  return {
+    person: person,
+    title: title,
+    slides: slides,
+    video: video
+  }
+})
+
+
+
+function Talk({person, title, slides, video} : {person: Person, title: string, slides: string, video: string}) {
+
+  let name = person.name
+  let affiliation = person.affiliation
+
+  let text = `- ${name} (${affiliation}): [${title}](${slides})
+----
+`
+
+  return (
+  <>
+      <ReactPlayer url={video} />
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}>
+        {text}
+      </ReactMarkdown>
+
+  </>
+  )
+  
+
+}
+
 /**
  * Render markdown
  * @param children - The markdown text to render
@@ -70,7 +139,7 @@ const ReturnButton = () => {
 }
 
 const SubPage = ({ text, id, hidereturn, children }: { text: string, id: string, hidereturn?: boolean, children?: ReactNode }) => {
-  const show = hidereturn === undefined || hidereturn == true ? true : false;
+  const show = hidereturn === undefined ? true : !hidereturn 
   return (
     <div className="pb-8">
       <Markdown id={id}>
@@ -237,7 +306,10 @@ export default function Home() {
               </SubPage>
               <SubPage text={travel.toString()} id="travel" />
               <SubPage text={code_of_conduct.toString()} id="code_of_conduct" />
-              <SubPage text={resources.toString()} id="resources">
+              <SubPage text={resources.toString()} id="resources" hidereturn={true}>
+              { talks.map((x,i) => <Talk key={i} person={x.person} title={x.title} video={x.video} slides={x.slides} />)}
+              </SubPage>
+              <SubPage text={preview.toString()} id="preview">
               <div className="pt-5">
               <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
               </div>

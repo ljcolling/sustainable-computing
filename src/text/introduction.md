@@ -3,8 +3,7 @@
 Thank you to everyone who attended the first EIC workshop. We hope you enjoyed it
 as much as we did.
 
-Copies of all the presentations are available under [resources](#resources) and
-recordings of the presentations will be available soon.
+Copies of the slides and recordings of the presentations are available under [resources](#resources).
 
 In the meantime, we are building a community focused on promoting
 environmentally sustainable computational research. To join, please fill out the
