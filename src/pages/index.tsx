@@ -103,7 +103,7 @@ function Talk({person, title, slides, video} : {person: Person, title: string, s
 
   return (
   <>
-      <ReactPlayer url={video} />
+      <ReactPlayer url={video} width="auto" />
       <ReactMarkdown
         rehypePlugins={[rehypeRaw]}>
         {text}
@@ -311,7 +311,7 @@ export default function Home() {
               </SubPage>
               <SubPage text={preview.toString()} id="preview">
               <div className="pt-5">
-              <ReactPlayer fallback={<></>} url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
+              <ReactPlayer url="https://www.youtube.com/watch?v=S59UOH3HLFo" width="auto" />
               </div>
               </SubPage>
             </article>
